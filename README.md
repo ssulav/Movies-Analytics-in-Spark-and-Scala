@@ -40,15 +40,28 @@ Solving analytical questions on the semi-structured [MovieLens dataset](https://
 
 1. Simply clone the repository
 	```
-	git clone https://github.com/Thomas-George-T/Movies-Analytics-in-Spark-and-Scala.git
+	git clone https://github.com/ssulav/Movies-Analytics-in-Spark-and-Scala.git
 	```
-2. In the repo, Navigate to Spark RDD, Spark SQL or Spark Dataframe locations as needed.
+2. Downloading Movie Data
+        ```
+        wget https://files.grouplens.org/datasets/movielens/ml-1m.zip --no-check-certificate
+        unzip ml-1m.zip
+        ```
+3. Setting up Data in HDFS
+        ```
+	#kinit -kt /cdep/keytabs/hdfs.keytab hdfs
+	hdfs dfs -mkdir /Movielens
+	hdfs dfs -copyFromLocal ml-1m/*dat /Movielens
+	hdfs dfs -chmod 777 /Movielens/*
+        ```
 
-3. Run the execute script to view results
+4. In the repo, Navigate to Spark RDD, Spark SQL or Spark Dataframe locations as needed.
+
+5. Run the execute script to view results
 	```
 	sh execute.sh
 	```
-4. The `execute.sh` will pass the scala code through spark-shell and then display the findings in the terminal from the results folder.
+6. The `execute.sh` will pass the scala code through spark-shell and then display the findings in the terminal from the results folder.
 
 # Analytical Queries
 
