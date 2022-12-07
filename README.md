@@ -43,17 +43,13 @@ Solving analytical questions on the semi-structured [MovieLens dataset](https://
 	git clone https://github.com/ssulav/Movies-Analytics-in-Spark-and-Scala.git
 	```
 2. Downloading Movie Data
-        ```
-        wget https://files.grouplens.org/datasets/movielens/ml-1m.zip --no-check-certificate
-        unzip ml-1m.zip
-        ```
+<pre><code>wget https://files.grouplens.org/datasets/movielens/ml-1m.zip --no-check-certificate
+unzip ml-1m.zip</code></pre>
 3. Setting up Data in HDFS
-        ```
-	#kinit -kt /cdep/keytabs/hdfs.keytab hdfs
-	hdfs dfs -mkdir /Movielens
-	hdfs dfs -copyFromLocal ml-1m/*dat /Movielens
-	hdfs dfs -chmod 777 /Movielens/*
-        ```
+<pre><code>#kinit -kt /cdep/keytabs/hdfs.keytab hdfs
+hdfs dfs -mkdir /Movielens
+hdfs dfs -copyFromLocal ml-1m/*dat /Movielens
+hdfs dfs -chmod 777 /Movielens/*</code></pre>
 
 4. In the repo, Navigate to Spark RDD, Spark SQL or Spark Dataframe locations as needed.
 
